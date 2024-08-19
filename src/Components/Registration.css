@@ -1,0 +1,93 @@
+.main-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 200px;
+    margin-top: 150px;
+  }
+  
+  .form-cont {
+    box-shadow: 0 0 10px rgb(146, 145, 145);
+    width: 600px;
+    border-radius: 7px;
+    padding: 20px 40px;
+    background-color: rgb(182, 215, 230);
+  }
+  
+  .form {
+    width: 100%;
+  }
+  
+  .form-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-input p {
+    flex: 1;
+    margin: 5px;
+  }
+  
+  .form-input input {
+    flex: 2;
+    height: 35px;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+  }
+  
+  .form button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 7px;
+    background-color: green;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .lottie {
+    margin-right: 50px;
+  }
+  
+  .success-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 0 10px rgb(146, 145, 145); */
+    border-radius: 7px;
+    padding: 20px;
+    /* background-color: rgb(207, 205, 205); */
+    width: 400px;
+    margin: auto;
+    margin-right: 500px;
+  }
+  
+  .success-box h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    color:green;
+  }
+  
+  .home-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 7px;
+    background-color:green;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+  
