@@ -1,16 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Cartitems = () => {
   const location = useLocation();
-  const cartItems = location.state?.cartItems || [];  
   const navigate = useNavigate();
+  
+  // Initialize state for cart items
+  const [cartItems, setCartItems] = useState(location.state?.cartItems || []);
+  
+  // State for the current date
+  const [currentDate, setCurrentDate] = useState("");
 
-  const handlePayment = ()=>{
-    navigate('/payment')
-  }
+  useEffect(() => {
+    // Set the current date when the component mounts
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    });
+    setCurrentDate(formattedDate);
+  }, []); // Empty dependency array means this runs only once on mount
+
+  const handlePayment = () => {
+    navigate('/payment');
+  };
+
+  // Function to remove an item from the cart
+  const handleRemoveItem = (indexToRemove) => {
+    setCartItems((prevItems) =>
+      prevItems.filter((_, index) => index !== indexToRemove)
+    );
+  };
+
   return (
     <div className="cartpage-container">
+      {/* Display the current date at the top */}
+      <div className="cartpage-date">
+        Date: {currentDate}
+      </div>
+
       <div className="cartpage-header">
         <button onClick={() => navigate("/cart-items")} className="cartpage-back">
           <u>Continue Shopping</u>
@@ -42,12 +71,24 @@ const Cartitems = () => {
           </div>
           <div className="cartpage-price">
             ₹ {item.price.toFixed(2)}
+            <button 
+              className="cartpage-remove-button" 
+              onClick={() => handleRemoveItem(index)}
+            >
+              ❌
+            </button>
           </div>
         </div>
       ))}
-      
+
       <div className="cartpage-footer">
-        <button onClick={handlePayment} className="cartpage-proceed-button">Proceed to Payment</button>
+        <button 
+          onClick={handlePayment} 
+          className="cartpage-proceed-button"
+          disabled={cartItems.length === 0} // Disable button if no items
+        >
+          Proceed to Payment
+        </button>
       </div>
     </div>
   );

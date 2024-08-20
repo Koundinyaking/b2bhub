@@ -6,7 +6,7 @@ import moong from "./moong.jpg";
 import gram from "./gram.jpeg";
 
 const dalItems = [
-  { name: "Toor Dal", image: rice, minQuantity: 100 },
+  { name: "Toor Dal", image: rice, minQuantity: 100},
   { name: "Urad Dal", image: uraddal, minQuantity: 100 },
   { name: "Moong Dal", image: moong, minQuantity: 100 },
   { name: "Gram Dal", image: gram, minQuantity: 100 },
@@ -62,13 +62,8 @@ const Addcart = () => {
         >
           Buyer
         </button>
-        <button
-          className={`addcart-role-button ${!isBuyer ? "active" : ""}`}
-          onClick={() => handleModeChange("Seller")}
-        >
-          Seller
-        </button>
       </div>
+
       <div className="addcart-grid">
         {dalItems.map((dal, index) => (
           <div key={index} className="addcart-grid-row">
@@ -135,6 +130,16 @@ const Addcart = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Seller button at the bottom center */}
+      <div className="addcart-seller-ctn">
+        <button
+          className={`addcart-seller-button ${!isBuyer ? "active" : ""}`}
+          onClick={() => handleModeChange("Seller")}
+        >
+          If you want to sell? Click Here
+        </button>
       </div>
     </div>
   );
