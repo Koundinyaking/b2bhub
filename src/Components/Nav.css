@@ -2,17 +2,17 @@
 
 .main {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 8px;
+    padding: 0% 30px;
+    margin-top: -25px;
 }
 
 .logo {
-    font-size: 40px;
-    font-weight: bold;
-    font-family: "DM Serif Text", serif;
+    padding: 0%;
 
 }
+
 
 .search {
     background: rgb(240, 240, 241);

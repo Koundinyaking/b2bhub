@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.section {
+  background-color: rgb(182, 215, 230);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 10%;
+  margin-right: 20px;
+  /* height: 800px; */
+}
+
+.payment-section{
+  flex: 1;
+  padding:20px;
+  width:300px;
+  /* height: 58px; */
+  margin-top: 120px;
+  
+}
+.delivery-section {
+  flex: 1;
+  padding:20px;
+  width:250px;
+  /* height: 58px; */
+  margin-top: 120px;
+  height:300px;
+  
+
+}
+
+h2 {
+  font-size: 17px;
+  color: black;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+  color: black;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 95%;
+  padding: 8px;
+  border-radius: 5px;
+  /* border: 1px solid #ccc; */
+  height: 17px;
+  border: none;
+  outline: none;
+}
+
+.bank-details {
+  margin-top: 20px;
+}
+
+.bank-details h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.email-instruction {
+  font-size: 16px;
+  margin-top: 20px;
+  color: black;
+}
+
+.email-input {
+  width: 50%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin-top: 10px;
+  margin-left: 150px;
+  height: 17px;
+  border: none;
+  outline: none;
+}
+
+.sample-info {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+.section button {
+  display: block;
+  margin: 70px auto;
+  padding: 10px 20px;
+  border-radius: 7px;
+  background-color: green;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 80px;
+  margin-left: 450px;
+}
