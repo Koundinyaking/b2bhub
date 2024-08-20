@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<h1>Landingpage here</h1>} />
         <Route path="/registration" element={<Registration />}/>
-        <Route path="/cart-items" element={<Addcart />} />
+        <Route path="/products" element={<Addcart />} />
         <Route path="/successful-sell" element={<Aftersubmit />} />
         <Route path="/cart" element={<Cartitems />} />
         <Route path="/payment" element={<Payment />} />

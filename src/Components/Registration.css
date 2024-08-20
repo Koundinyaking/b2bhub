@@ -10,9 +10,10 @@
     /* box-shadow: 0 0 10px rgb(146, 145, 145); */
     width: 600px;
     border-radius: 7px;
-    text-align: center;
+    text-align: left;
     padding: 20px 40px;
-    background-color: rgb(182, 215, 230);
+    /* border: solid rgba(0, 0, 0, 0.51); */
+    background-color: rgba(0, 0, 0, 0.288);
   }
   
   .form {

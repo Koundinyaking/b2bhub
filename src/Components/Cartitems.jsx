@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Nav from './Nav';
 import { useLocation, useNavigate } from "react-router-dom";
-
+import moong from "./moong.jpg";
 const Cartitems = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Cartitems = () => {
       year: "numeric"
     });
     setCurrentDate(formattedDate);
-  }, []); // Empty dependency array means this runs only once on mount
+  }, []);
 
   const handlePayment = () => {
     navigate('/payment');
@@ -34,63 +35,69 @@ const Cartitems = () => {
   };
 
   return (
-    <div className="cartpage-container">
-      {/* Display the current date at the top */}
-      <div className="cartpage-date">
-        Date: {currentDate}
-      </div>
-
-      <div className="cartpage-header">
-        <button onClick={() => navigate("/cart-items")} className="cartpage-back">
-          <u>Continue Shopping</u>
-        </button>
-      </div>
-
-      <div className="cartpage-title">Shopping Cart</div>
-      <div className="cartpage-subtitle">
-        You have {cartItems.length} item(s) in your cart
-      </div>
-
-      {cartItems.map((item, index) => (
-        <div key={index} className="cartpage-item">
-          <div className="cartpage-image-container">
-            <img src={item.image} alt={item.name} className="cartpage-image" />
-          </div>
-          <div className="cartpage-details">
-            <div className="cartpage-product-name">{item.name}</div>
-            <div className="cartpage-product-subname">{item.name}</div>
-          </div>
-          <div className="cartpage-quantity-container">
-            <label className="cartpage-label">Quantity</label>
-            <input
-              type="number"
-              value={item.quantity}
-              readOnly
-              className="cartpage-quantity-input"
-            />
-          </div>
-          <div className="cartpage-price">
-            ₹ {item.price.toFixed(2)}
-            <button 
-              className="cartpage-remove-button" 
-              onClick={() => handleRemoveItem(index)}
-            >
-              ❌
-            </button>
-          </div>
+    <>
+      <Nav />
+      
+    
+      {/* Main content container */}
+      <div className="cartpage-container">
+        {/* Display the current date below the Nav */}
+        <div className="cartpage-date">
+          Date: {currentDate}
         </div>
-      ))}
 
-      <div className="cartpage-footer">
-        <button 
-          onClick={handlePayment} 
-          className="cartpage-proceed-button"
-          disabled={cartItems.length === 0} // Disable button if no items
-        >
-          Proceed to Payment
-        </button>
+        <div className="cartpage-header">
+          <button onClick={() => navigate("/products")} className="cartpage-back">
+            <u>Continue Shopping</u>
+          </button>
+        </div>
+
+        <div className="cartpage-title">Shopping Cart</div>
+        <div className="cartpage-subtitle">
+          You have {cartItems.length} item(s) in your cart
+        </div>
+
+        {cartItems.map((item, index) => (
+          <div key={index} className="cartpage-item">
+            <div className="cartpage-image-container">
+              <img src={item.image} alt={item.name} className="cartpage-image" />
+            </div>
+            <div className="cartpage-details">
+              <div className="cartpage-product-name">{item.name}</div>
+              <div className="cartpage-product-subname">{item.name}</div>
+            </div>
+            <div className="cartpage-quantity-container">
+              <label className="cartpage-label">Quantity</label>
+              <input
+                type="number"
+                value={item.quantity}
+                readOnly
+                className="cartpage-quantity-input"
+              />
+            </div>
+            <div className="cartpage-price">
+              ₹ {item.price.toFixed(2)}
+              <button 
+                className="cartpage-remove-button" 
+                onClick={() => handleRemoveItem(index)}
+              >
+                ❌
+              </button>
+            </div>
+          </div>
+        ))}
+
+        <div className="cartpage-footer">
+          <button 
+            onClick={handlePayment} 
+            className="cartpage-proceed-button"
+            disabled={cartItems.length === 0} // Disable button if no items
+          >
+            Proceed to Payment
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

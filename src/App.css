@@ -3,8 +3,7 @@
   text-align: center;
   background-color: #f7f7f7;
   font-family: Arial, sans-serif;
-  margin: 150px auto 0; 
-
+  margin: 10px auto 0; 
 }
 
 .addcart-role-ctn {
@@ -17,16 +16,19 @@
   border:none;
   color:none;
   cursor:pointer;
+
 }
 
 .addcart-role-button {
-  background-color: #007bff;
+  background-color: #4a76a5;
   border: none;
   padding: 10px 20px;
-  margin: 0 10px;
+  margin: 0px 20px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   color: white;
+  width:fit-content;
+  height:50px;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
@@ -40,13 +42,15 @@
   gap: 25px;
   width:70%;
   margin-left:15%;
+  backdrop-filter: blur(10px);
 }
 
 .addcart-grid-row {
-  background-color: #ffffff;
+  background-color: #9696963b;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
 }
 
 .addcart-grid-header {
@@ -54,7 +58,7 @@
   grid-template-columns: 2fr 1fr 1fr 1fr;
   font-weight: bold;
   font-size: 16px;
-  color: #868585;
+  color: #fffafa;
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 2px solid #ddd;
@@ -140,7 +144,7 @@
 
 .addcart-seller-button {
   padding: 15px 30px;
-  background-color: #34495e;
+  background-color: #1965b1;
   color: white;
   border: none;
   cursor: pointer;
@@ -150,7 +154,7 @@
 }
 
 .addcart-seller-button.active {
-  background-color: #34495d;
+  background-color: #2c5c89;
 }
 
 .cartpage-date {
@@ -187,14 +191,14 @@
 
 /*cartitems displaying*/
 
-
 .cartpage-container {
   max-width: 900px;
-  margin: 190px auto 0; 
+  margin: 170px auto 0; 
   padding: 20px;
   background-color: #f9f9f9;
   border: none;
   position: relative; 
+  border-radius: 7px;
 }
 
 .cartpage-header {
