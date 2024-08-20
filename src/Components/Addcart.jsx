@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import rice from "./rice.jpg";
+import uraddal from "./urad dal.jpeg";
+import moong from "./moong.jpg";
+import gram from "./gram.jpeg";
 
 const dalItems = [
   { name: "Toor Dal", image: rice, minQuantity: 100 },
-  { name: "Urad Dal", image: rice, minQuantity: 100 },
-  { name: "Moong Dal", image: rice, minQuantity: 100 },
-  { name: "Gram Dal", image: rice, minQuantity: 100 },
+  { name: "Urad Dal", image: uraddal, minQuantity: 100 },
+  { name: "Moong Dal", image: moong, minQuantity: 100 },
+  { name: "Gram Dal", image: gram, minQuantity: 100 },
 ];
 
 const Addcart = () => {
@@ -46,7 +49,7 @@ const Addcart = () => {
       navigate("/cart", { state: { cartItems: [...cartItems, newItem] } });
     } else if (!isBuyer) {
       console.log(`Submitted ${item.name} at ₹${prices[index]} per kg.`);
-      navigate("/Aftersubmit");
+      navigate("/successful-sell");
     }
   };
 

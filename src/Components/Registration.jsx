@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "../Components/Registration.css";
 import Lottie from "react-lottie";
-import * as Reg_icon from "../assests/registration_json.json";
-import * as Success_icon from "../assests/succesful_json.json";
+import * as Reg_icon from "../assets/registration_json.json";
+import * as Success_icon from "../assets/succesful_json.json";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate=useNavigate();
 
   const defaultOptions1 = {
     loop: true,
@@ -27,6 +29,7 @@ const Registration = () => {
 
   const handleSubmit = () => {
     setIsSubmitted(true);
+    navigate('/')
   };
 
   const handleGoBack = () => {
@@ -70,8 +73,7 @@ const Registration = () => {
                 <p>
                   <b>Phone Number</b>
                 </p>
-                <input type="text" placeholder="+91" className="phone-code" />
-                <input type="text" />
+                <input type="number" placeholder="+91" className="phone-code" />
               </div>
               <div className="form-input">
                 <p>

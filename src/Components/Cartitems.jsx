@@ -6,10 +6,13 @@ const Cartitems = () => {
   const cartItems = location.state?.cartItems || [];  
   const navigate = useNavigate();
 
+  const handlePayment = ()=>{
+    navigate('/payment')
+  }
   return (
     <div className="cartpage-container">
       <div className="cartpage-header">
-        <button onClick={() => navigate("/")} className="cartpage-back">
+        <button onClick={() => navigate("/cart-items")} className="cartpage-back">
           <u>Continue Shopping</u>
         </button>
       </div>
@@ -44,7 +47,7 @@ const Cartitems = () => {
       ))}
       
       <div className="cartpage-footer">
-        <button className="cartpage-proceed-button">Proceed to Payment</button>
+        <button onClick={handlePayment} className="cartpage-proceed-button">Proceed to Payment</button>
       </div>
     </div>
   );
